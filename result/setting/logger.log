@@ -1,0 +1,59 @@
+[2021-05-23 13:56:19,644] [INFO] :  prepare experiment...
+[2021-05-23 13:56:19,644] [INFO] :  setting seeds of the all random generater to 1240
+[2021-05-23 13:56:19,644] [INFO] :  specify the number of k folds as 5
+[2021-05-23 13:56:19,644] [INFO] :  awake the data manager
+[2021-05-23 13:56:19,644] [INFO] :  loading train data from /work/data/input/WIFI_BLE_Dataset_with_AP_position/dataset_with_wifi_ap_pos_normalize_train.pkl
+[2021-05-23 14:17:51,449] [INFO] :  prepare experiment...
+[2021-05-23 14:17:51,449] [INFO] :  setting seeds of the all random generater to 1240
+[2021-05-23 14:17:51,450] [INFO] :  specify the number of k folds as 5
+[2021-05-23 14:17:51,450] [INFO] :  awake the data manager
+[2021-05-23 14:17:51,450] [INFO] :  loading train data from /work/data/input/WIFI_BLE_Dataset_with_AP_position/dataset_with_wifi_ap_pos_normalize_train.pkl
+[2021-05-23 14:18:24,656] [INFO] :  prepare experiment...
+[2021-05-23 14:18:24,656] [INFO] :  setting seeds of the all random generater to 1240
+[2021-05-23 15:54:48,391] [INFO] :  prepare experiment...
+[2021-05-23 15:54:48,392] [INFO] :  setting seeds of the all random generater to 1240
+[2021-05-23 15:54:54,956] [INFO] :  prepare experiment...
+[2021-05-23 15:54:54,957] [INFO] :  setting seeds of the all random generater to 1240
+[2021-05-23 15:55:14,556] [INFO] :  prepare experiment...
+[2021-05-23 15:55:14,557] [INFO] :  setting seeds of the all random generater to 1240
+[2021-05-23 15:55:40,498] [INFO] :  prepare experiment...
+[2021-05-23 15:55:40,498] [INFO] :  setting seeds of the all random generater to 1240
+[2021-05-23 15:55:40,499] [INFO] :  specify the number of k folds as 5
+[2021-05-23 15:55:40,499] [INFO] :  awake the data manager
+[2021-05-23 15:58:51,778] [INFO] :  prepare experiment...
+[2021-05-23 15:58:51,778] [INFO] :  setting seeds of the all random generater to 1240
+[2021-05-23 15:58:51,779] [INFO] :  specify the number of k folds as 5
+[2021-05-23 15:58:51,779] [INFO] :  awake the data manager
+[2021-05-23 15:58:58,931] [INFO] :  prepare experiment...
+[2021-05-23 15:58:58,932] [INFO] :  setting seeds of the all random generater to 1240
+[2021-05-23 15:58:58,932] [INFO] :  specify the number of k folds as 5
+[2021-05-23 15:58:58,932] [INFO] :  awake the data manager
+[2021-05-23 15:58:58,933] [INFO] :  loading train data from /work/data/input/archive/train_all.pkzl
+[2021-05-23 15:59:55,288] [INFO] :  prepare experiment...
+[2021-05-23 15:59:55,288] [INFO] :  setting seeds of the all random generater to 1240
+[2021-05-23 15:59:55,288] [INFO] :  specify the number of k folds as 5
+[2021-05-23 15:59:55,288] [INFO] :  awake the data manager
+[2021-05-23 15:59:55,288] [INFO] :  loading train data from /work/data/input/google-smartphone-decimeter-challenge/baseline_locations_train.csv
+[2021-05-23 15:59:55,451] [INFO] :  loading test data from /work/data/input/google-smartphone-decimeter-challenge/baseline_locations_test.csv
+[2021-05-23 15:59:55,523] [INFO] :  awake the preprocess manager
+[2021-05-23 16:00:53,997] [INFO] :  prepare experiment...
+[2021-05-23 16:00:53,997] [INFO] :  setting seeds of the all random generater to 1240
+[2021-05-23 16:00:53,997] [INFO] :  specify the number of k folds as 5
+[2021-05-23 16:00:53,997] [INFO] :  awake the data manager
+[2021-05-23 16:00:53,997] [INFO] :  loading train data from /work/data/input/google-smartphone-decimeter-challenge/baseline_locations_train.csv
+[2021-05-23 16:00:54,302] [INFO] :  loading test data from /work/data/input/google-smartphone-decimeter-challenge/baseline_locations_test.csv
+[2021-05-23 16:00:54,398] [INFO] :  awake the preprocess manager
+[2021-05-23 16:00:54,399] [INFO] :  awake the preprocess manager
+[2021-05-23 16:00:54,399] [INFO] :  awake the postprocess manager
+[2021-05-23 16:00:54,399] [INFO] :  awake the model manager
+[2021-05-23 16:01:10,908] [INFO] :  prepare experiment...
+[2021-05-23 16:01:10,909] [INFO] :  setting seeds of the all random generater to 1240
+[2021-05-23 16:01:10,909] [INFO] :  specify the number of k folds as 5
+[2021-05-23 16:01:10,910] [INFO] :  awake the data manager
+[2021-05-23 16:01:10,910] [INFO] :  loading train data from /work/data/input/google-smartphone-decimeter-challenge/baseline_locations_train.csv
+[2021-05-23 16:01:11,070] [INFO] :  loading test data from /work/data/input/google-smartphone-decimeter-challenge/baseline_locations_test.csv
+[2021-05-23 16:01:11,138] [INFO] :  awake the preprocess manager
+[2021-05-23 16:01:11,138] [INFO] :  awake the preprocess manager
+[2021-05-23 16:01:11,138] [INFO] :  awake the postprocess manager
+[2021-05-23 16:01:11,138] [INFO] :  awake the model manager
+[2021-05-23 16:01:11,138] [INFO] :  awake the result manager

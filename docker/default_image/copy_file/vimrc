@@ -1,0 +1,40 @@
+
+" [reference]
+"   https://qiita.com/iwaseasahi/items/0b2da68269397906c14c
+
+"------------
+"   visual
+"------------
+"" show line number 
+set number
+
+"" highlight the corresponding bracket when you input a bracket.
+set showmatch
+
+"" highlight the focusing line by an underline.
+set cursorline
+
+"" show the editing file name.
+set statusline=%F
+
+"" always show a start line.
+set laststatus=2
+
+set autoindent
+
+"-------------
+"    search
+"------------
+
+" ignore upper- or lower-case when you search.
+set ignorecase
+
+" research a word when a search end to the tail of the file.
+set wrapscan
+
+" -----------
+"    other
+"-----------
+
+set spell
+set spelllang=en,cjk

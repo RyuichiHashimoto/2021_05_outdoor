@@ -1,0 +1,30 @@
+version: '3'
+services:
+  pythonscript:
+    image: kaggle/python:latest
+    container_name: Kaggle
+    volumes:
+      - /home/ryuichi/.bashrc:/root/.bashrc
+      - /home/ryuichi/.vimrc:/root/.vimrc
+      - /home/ryuichi/.vimrc:/root/vimrc
+      - /home/ryuichi/.ssh:/root/.ssh
+      - /home/ryuichi/.kaggle/kaggle.json:/root/.kaggle/kaggle.json
+      - /home/ryuichi/kaggle/competition/2021_02_Indoor:/work
+    working_dir: /work  
+    security_opt:
+      - seccomp:unconfined
+
+  jupyer:
+    image: jupyter/datascience-notebook:lab-3.0.7
+#    image: kaggle/python:latest
+    container_name: Jupyter
+    volumes:
+      - /home/ryuichi/kaggle/competition/2021_02_Indoor:/work
+    working_dir: /work  
+    ports:
+      - 9000:8888
+    command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser
+    security_opt:
+      - seccomp:unconfined
+#    command: bash -c "jupyter noteabook --ip=0.0.0.0 --allow-root --no-browser && jupyter notebook list | grep http | awk '{print($1)}'"
+
