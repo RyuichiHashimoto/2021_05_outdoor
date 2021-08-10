@@ -1,0 +1,26 @@
+FROM jupyter/datascience-notebook:lab-3.0.7
+
+RUN pip install --upgrade pip && pip install plotly
+
+
+
+
+## https://qiita.com/neko-desu/items/3a9ff96e200073e59101
+## 
+RUN pip install jupyter_contrib_nbextensions
+RUN pip install jupyter_nbextensions_configurator
+
+## kalman filter liblary 
+RUN pip install simdkalman
+RUN pip install plotly
+
+
+
+
+
+RUN jupyter contrib nbextension install --user
+RUN jupyter nbextension enable codefolding/main
+RUN jupyter contrib nbextensions migrate
+RUN jupyter nbextensions_configurator enable --user
+
+

@@ -23,9 +23,6 @@ class postprocess_manager():
         self._print("awake the postprocess manager")
         for postprocess in self.postprocess_list:
             postprocess.execute(data_manager);
-
-            
-        
     
     def get_n_of_preprocess(self):
         return len(self.preprocess);

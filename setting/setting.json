@@ -6,15 +6,27 @@
     },
     "data_manager":{
         "train":{
-            "data_path" : "/work/data/input/google-smartphone-decimeter-challenge/baseline_locations_train.csv",
+            "data_path" : "/work/data/input/selfmade_dataset/baseline_with_derived_data_v1/train.pkl",
+            "x_header" : ["x","y"],
+            "y_header" : ["x","y"],
+            "feather":[
+                ["","overwrite"]
+            ]            
+        },
+        "test":{
+            "data_path" : "/work/data/input/selfmade_dataset/baseline_with_derived_data_v1/test.pkl",
             "x_header" : ["x","y"],
             "y_header" : ["x","y"]        
         },
-        "test":{
-            "data_path" : "/work/data/input/google-smartphone-decimeter-challenge/baseline_locations_test.csv",
-            "x_header" : ["x","y"],
-            "y_header" : ["x","y"]        
+        "feature_manager":{
+            "date_info":{
+                "overwrite":true
+            },"test_feature":{
+                "overwrite":true
+            }
         }
+
+
     },
     "preprocess_settings":{
 

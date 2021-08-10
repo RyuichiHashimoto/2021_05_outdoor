@@ -1,0 +1,41 @@
+version: '3'
+services:
+  pythonscript:
+    image: kaggle/python:latest
+    container_name: Kaggle
+    volumes:
+      - /home/ryuichi/.bashrc:/root/.bashrc:ro
+      - /home/ryuichi/.vimrc:/root/.vimrc:ro
+      - /home/ryuichi/.vimrc:/root/vimrc:ro
+      - /home/ryuichi/.ssh:/root/.ssh:ro
+      - /home/ryuichi/.kaggle/kaggle.json:/root/.kaggle/kaggle.json:ro
+      - /home/ryuichi/kaggle/competition/2021_05_Outdoor:/work            
+#      - /etc/passwd:/etc/passwd:ro
+#      - /etc/group:/etc/group:ro
+    working_dir: /work  
+    user: 1000:1000
+    security_opt:
+      - seccomp:unconfined
+
+    environment:
+       PYTHONPATH: "/work/src"
+
+
+  jupyer:
+    build:
+     context: ./dockerfile_list
+     dockerfile: Dockerfile_jupyter           
+    container_name: Jupyter
+    volumes:
+      - /home/ryuichi/kaggle/competition/2021_05_Outdoor:/work
+    working_dir: /work  
+    ports:
+      - 9000:8888
+    command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser
+
+    security_opt:
+      - seccomp:unconfined
+
+    environment:
+       PYTHONPATH: "/work/src"
+

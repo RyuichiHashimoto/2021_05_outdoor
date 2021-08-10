@@ -31,7 +31,6 @@ def set_seed(seed=42):
 
 def main(setting_file):
         
-
     ## read setting json format file.
     setting_file = setting_file.replace("\\","/");
     setting_json = json.load(open(setting_file,"r"));
@@ -41,8 +40,6 @@ def main(setting_file):
     output_base_path = "/".join(setting_file.replace("setting","result").split("/")[:-1]) +"/" + EXPERIMENT_ID;    
     os.makedirs(output_base_path,exist_ok=True);
     
-
-
     ## generate logger object.
     create_logger(setting_json["basic_settings"]["LOGGER_LEVEL"],output_base_path);
     logger = get_logger();
@@ -70,7 +67,6 @@ def main(setting_file):
     ## preprocessing    
     logger.info("awake the postprocess manager")
     postprocessManager = postprocess_manager(setting_json["postprocess_settings"],logger);    
-
     
     logger.info("awake the model manager")
     model_manage = model_manager(setting_json["model"],logger);
@@ -116,9 +112,7 @@ def main(setting_file):
         
         result_manage.update(model_manage,d_manager,outputPath);
     
-    result_manage.save(model_manage,d_manager,output_base_path);
-    
-
+    result_manage.save(model_manage,d_manager,output_base_path);    
 
 if __name__ == "__main__":
 

@@ -15,17 +15,13 @@ class data_manager():
         self.param = setting_json;        
         self.logger = logger;
 
+        self.load_dataset_from_file(self.param);  
+    
+    def load_dataset_from_file(self,setting_json):
         self._print("loading train data from "+self.param["train"]["data_path"]);
         self.train_df = self._load_data_from_file(self.param["train"]["data_path"]);                
-
-        self.train_x_head = self.param["train"]["x_header"]
-        self.train_y_head = self.param["train"]["y_header"]
-
         self._print("loading test data from "+self.param["test"]["data_path"]);
         self.test_df = self._load_data_from_file(self.param["test"]["data_path"]);    
-        self.test_x_head = self.param["test"]["x_header"]
-        self.test_y_head = self.param["test"]["y_header"]   
-        
         
         
 
@@ -52,7 +48,6 @@ class data_manager():
         self.test_x = copy.deepcopy(self.test_df.loc[:,self.test_x_head]);
         self.test_y = pd.DataFrame(np.zeros((len(self.test_df),len(self.test_y_head))      ),columns=self.test_y_head);
 
-
     def _print(self,msg):
         if(self.logger==None):
             print(msg);
@@ -76,46 +71,19 @@ class data_manager():
             raise Exception("cannot open such a "+ file_path.split(".")[-1]  + " file format ");
 
 
-class feather_manager():
-
-    def __init__(self):
-        pass;
-
-    def __init__(self,setting_json=None,logger=None):
-        
-        
-        
-        
-        pass;
-
-
-
-
-
-    def _print(self,msg):
-        if(self.logger==None):
-            print(msg);
-        else:
-            self.logger.info(msg);
-
-
-    
-
-    
-
-
-
-
 
 if __name__ == "__main__":
     import json
 
 
     ## read setting json format file.
-    setting_file = "../setting/LSTM_LGBM_0002.json";
+    setting_file = "/work/setting/setting.json";
     setting_file = setting_file.replace("\\","/");
     setting_json = json.load(open(setting_file,"r"));
-    data_manager(setting_json["data_manager"]);
+    s = data_manager(setting_json["data_manager"]);
+
+
+    
 
 
 

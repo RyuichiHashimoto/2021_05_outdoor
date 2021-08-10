@@ -1,0 +1,31 @@
+FROM kaggle/python:latest
+
+
+RUN pip install --upgrade pip
+RUN conda update conda
+
+## https://qiita.com/neko-desu/items/3a9ff96e200073e59101
+## 
+RUN pip install jupyter_contrib_nbextensions
+RUN jupyter contrib nbextension install --user
+RUN jupyter contrib nbextension install 
+
+
+RUN jupyter nbextensions_configurator enable
+RUN jupyter nbextensions_configurator enable --user
+#RUN pip install jupyter_nbextensions_configurator
+
+
+RUN jupyter nbextension enable codefolding/main
+#RUN jupyter contrib nbextensions migrate
+#RUN conda install anaconda-nb-extensions -c anaconda-nb-extensions
+
+## kalman filter liblary 
+RUN pip install simdkalman
+
+## 
+RUN pip install plotly
+RUN pip install selenium
+
+## geographical library
+RUN pip install osmnx momepy geopandas

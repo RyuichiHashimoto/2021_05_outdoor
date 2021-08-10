@@ -1,18 +1,27 @@
 import plotly.express as px
+from lib.noglobal import noglobal
 
-def visualize_trafic(df, zoom=9,outputfile=None):
-    
+@noglobal()
+def visualize_trafic(_df,color_header:str=None, zoom=9,outputfile=None):
+    df = _df.copy()
 
     center = {"lat":(df["latDeg"].max()  + df["latDeg"].min())/2, "lon": (df["lngDeg"].max()  + df["lngDeg"].min())/2}
     
-    fig = px.scatter_mapbox(df,
-                            
+    
+    if (color_header == None):
+        df["history"] =  [ i for i in range(df.shape[0])]
+        color_header = "history"
+    elif (color_header == "index"):
+        df[color_header] = df.index
+
+    
+    fig = px.scatter_mapbox(df,                            
                             # Here, plotly gets, (x,y) coordinates
                             lat="latDeg",
                             lon="lngDeg",
                             
                             #Here, plotly detects color of series
-                            color="phoneName",
+                            color=color_header,
                             labels="phoneName",
                             
                             zoom=zoom,
@@ -23,9 +32,6 @@ def visualize_trafic(df, zoom=9,outputfile=None):
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
     fig.update_layout(title_text="GPS trafic")
     
-    print(outputfile)
-    print(type(outputfile))
-        
     
     if (not outputfile == None):
         if (outputfile.endswith(".html")):
@@ -36,7 +42,18 @@ def visualize_trafic(df, zoom=9,outputfile=None):
             raise Exception("Sorry, I cannot understand the " + outputfile.split(".")[-1] +" file");
     else:
         return fig
-    
 
 
+def get_googlemap_url(df,zoom=14):
+    cent_lat  = (df["latDeg"].max()  + df["latDeg"].min())/2
+    cent_lon = (df["lngDeg"].max()  + df["lngDeg"].min())/2
+
+    print(f"https://www.google.co.jp/maps/@{cent_lat},{cent_lon},{zoom}z?hl=ja")
+
     
+    return f"https://www.google.co.jp/maps/@{cent_lat},{cent_lon},{zoom}z?hl=ja"
+
+
+
+
+
